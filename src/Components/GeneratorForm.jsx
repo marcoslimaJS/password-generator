@@ -34,13 +34,10 @@ const GeneratorForm = () => {
   const { characterLength, includePassword, setIncludePassword, setPassword } =
     useContext(GlobalContext);
 
-  console.log(includePassword);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const { password } = useGeneratePassword(includePassword, characterLength);
     setPassword(password)
-    console.log(password);
   };
 
   return (
@@ -75,10 +72,17 @@ const Form = styled.form`
   flex-direction: column;
   gap: 32px;
   margin-bottom: 30px;
+  @media (max-width: 500px) {
+    padding: 16px;
+    gap: 16px;
+  }
 `;
 
 const CheckboxContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media (max-width: 500px) {
+    margin-bottom: 16px;
+  }
 `;

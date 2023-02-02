@@ -7,7 +7,6 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 const ShowPassword = () => {
   const { password } = useContext(GlobalContext);
   const [copiedMessage, setCopiedMessage] = useState(false);
-  console.log(password);
 
   const copyToBoard = () => {
     if(password.length) {
@@ -39,13 +38,16 @@ const Container = styled.div`
   padding: 16px 32px;
   margin-bottom: 32px;
   position: relative;
-
   svg {
     cursor: pointer;
   }
   svg:hover path {
     fill: #fff;
     transition: 0.4s ease-in-out;
+  }
+  @media (max-width: 500px) {
+    margin-bottom: 16px;
+    padding: 16px;
   }
 `;
 const Text = styled.span`
@@ -54,6 +56,9 @@ const Text = styled.span`
   span {
     mix-blend-mode: normal;
     opacity: 0.25;
+  }
+  @media (max-width: 500px) {
+    font-size: 24px;
   }
 `;
 

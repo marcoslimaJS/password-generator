@@ -29,9 +29,7 @@ const strengthBar = ['tooWeak',  'weak', 'medium', 'strong']
 
 const StrengthPassword = () => {
   const { characterLength, includePassword } = useContext(GlobalContext);
-  const [force, setForce] = useState({text: '', color: ''})
-
-  console.log(characterLength, includePassword);
+  const [force, setForce] = useState({text: '', color: ''});
 
 
   useEffect(() => {
@@ -42,8 +40,7 @@ const StrengthPassword = () => {
     if(optLength === 4 && characterLength > 4 && characterLength < 7){
       strength = possibleStrength[3]
     }
-    if(optLength < 3 || characterLength < 4) strength = possibleStrength[1];
-    console.log(strength);
+    if(optLength < 2 || characterLength < 4) strength = possibleStrength[1];
     setForce(strength)
   }, [includePassword, characterLength]);
 
@@ -72,11 +69,23 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 500px) {
+    padding: 16px;
+  }
+  @media (max-width: 345px) {
+    padding: 16px 10px;
+  }
 `;
 
 const StrengthText = styled.span`
   color: #817d92;
   text-transform: uppercase;
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
+  @media (max-width: 345px) {
+    font-size: 14px;
+  }
 `;
 
 const PasswordStrength = styled.div`
@@ -86,6 +95,16 @@ const PasswordStrength = styled.div`
   span {
     text-transform: uppercase;
     font-size: 24px;
+  }
+  @media (max-width: 500px) {
+    gap: 16px;
+    span {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 345px) {
+    gap: 8px;
+    font-size: 14px;
   }
 `;
 

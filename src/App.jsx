@@ -38,4 +38,8 @@ const Title = styled.h1`
   color: #817d92;
   margin-bottom: 32px;
   text-align: center;
+  @media (max-width: 500px) {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
 `;

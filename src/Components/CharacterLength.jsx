@@ -4,7 +4,7 @@ import { GlobalContext } from "../GlobalContext";
 import Range from "./Range";
 
 const CharacterLength = () => {
-  const {characterLength} = useContext(GlobalContext);
+  const { characterLength } = useContext(GlobalContext);
 
   return (
     <Container>
@@ -19,7 +19,11 @@ const CharacterLength = () => {
 
 export default CharacterLength;
 
-const Container = styled.div``;
+const Container = styled.div`
+  @media (max-width: 500px) {
+    margin-bottom: 16px;
+  }
+`;
 
 const CharacterContainer = styled.div`
   display: flex;
@@ -27,8 +31,16 @@ const CharacterContainer = styled.div`
   align-items: center;
   margin-bottom: 8px;
   text-transform: capitalize;
+  @media (max-width: 500px) {
+    span {
+      font-size: 16px;
+    }
+  }
 `;
 const Length = styled.h2`
   color: #a4ffaf;
   font-size: 32px;
+  @media (max-width: 500px) {
+    font-size: 24px;
+  }
 `;

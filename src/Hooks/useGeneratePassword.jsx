@@ -16,7 +16,6 @@ const useGeneratePassword = (includes, size) => {
   };
 
   const getCharacter = (opt) => {
-    console.log(opt);
     if (opt) {
       const type = options[opt];
       const randomNumber = generateRandomNumber(type.length);
@@ -43,7 +42,6 @@ const useGeneratePassword = (includes, size) => {
       const currentType = generateRandomType();
       const currentCharacter = getCharacter(currentType);
       password += currentCharacter;
-      console.log(password);
     }
   }
 

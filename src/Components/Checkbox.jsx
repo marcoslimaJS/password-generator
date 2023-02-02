@@ -72,4 +72,12 @@ const Label = styled.label`
   p {
     cursor: pointer;
   }
+  @media (max-width: 500px) {
+    gap: 20px;
+    font-size: 16px;
+  }
+  @media (max-width: 345px) {
+    gap: 15px;
+    font-size: 14px;
+  }
 `;
