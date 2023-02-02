@@ -6,42 +6,42 @@ const possibleStrength = {
   4: {
     text: "Strong",
     color: "#A4FFAF",
-    lvl: 4
+    lvl: 4,
   },
   3: {
     text: "Medium!",
     color: "#F8CD65",
-    lvl: 3
+    lvl: 3,
   },
   2: {
     text: "Weak!",
     color: "#FB7C58",
-    lvl: 2
+    lvl: 2,
   },
   1: {
     text: "Too Weak!",
     color: "#F64A4A",
-    lvl: 1
+    lvl: 1,
   },
 };
 
-const strengthBar = ['tooWeak',  'weak', 'medium', 'strong']
+const strengthBar = ["tooWeak", "weak", "medium", "strong"];
 
 const StrengthPassword = () => {
   const { characterLength, includePassword } = useContext(GlobalContext);
-  const [force, setForce] = useState({text: '', color: ''});
-
+  const [force, setForce] = useState({ text: "", color: "" });
 
   useEffect(() => {
     let strength;
     const optLength = includePassword.length;
     if (optLength === 0 || characterLength === 0) return;
-    strength = characterLength > 6 ? possibleStrength[optLength] : possibleStrength[2];
-    if(optLength === 4 && characterLength > 4 && characterLength < 7){
-      strength = possibleStrength[3]
+    strength =
+      characterLength > 6 ? possibleStrength[optLength] : possibleStrength[2];
+    if (optLength === 4 && characterLength > 4 && characterLength < 7) {
+      strength = possibleStrength[3];
     }
-    if(optLength < 2 || characterLength < 4) strength = possibleStrength[1];
-    setForce(strength)
+    if (optLength < 2 || characterLength < 4) strength = possibleStrength[1];
+    setForce(strength);
   }, [includePassword, characterLength]);
 
   return (
@@ -52,8 +52,11 @@ const StrengthPassword = () => {
         <PasswordStrengthBarContainer>
           {strengthBar.map((e, index) => {
             return (
-              <PasswordStrengthBar key={e}  color={force.lvl > index ? force.color : ''}/>
-            )
+              <PasswordStrengthBar
+                key={e}
+                color={force.lvl > index ? force.color : ""}
+              />
+            );
           })}
         </PasswordStrengthBarContainer>
       </PasswordStrength>
@@ -114,6 +117,7 @@ const PasswordStrengthBarContainer = styled.div`
 `;
 
 const PasswordStrengthBar = styled.div`
+  transition: 0.4s ease-in-out;
   width: 10px;
   height: 28px;
   border: 2px solid ${(props) => props.color};

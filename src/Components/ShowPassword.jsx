@@ -9,10 +9,10 @@ const ShowPassword = () => {
   const [copiedMessage, setCopiedMessage] = useState(false);
 
   const copyToBoard = () => {
-    if(password.length) {
-      setCopiedMessage(true)
+    if (password.length) {
+      setCopiedMessage(true);
       setTimeout(() => {
-        setCopiedMessage(false)
+        setCopiedMessage(false);
       }, 2000);
     }
   };
@@ -63,7 +63,7 @@ const Text = styled.span`
 `;
 
 const Copied = styled.div`
-  display: ${(props) => props.visible ? 'inline-block' : 'none'};
+  display: ${(props) => (props.visible ? "inline-block" : "none")};
   position: absolute;
   right: 10px;
   bottom: -35px;
@@ -72,10 +72,11 @@ const Copied = styled.div`
   font-size: 18px;
   padding: 10px 20px;
   background: #a4ffaf;
-  color: #24232C;
+  color: #24232c;
   border-radius: 5px;
+  animation: anime 0.3s;
   &::before {
-    content: '';
+    content: "";
     display: inline-block;
     position: absolute;
     right: 25px;
@@ -84,4 +85,14 @@ const Copied = styled.div`
     border-right: 10px solid transparent;
     border-bottom: 10px solid #a4ffaf;
   }
-`
+  @keyframes anime {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -30px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+`;
