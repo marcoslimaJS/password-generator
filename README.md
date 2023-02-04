@@ -1,6 +1,6 @@
 # Frontend Mentor - Password Generate
 
-![Visualização do design para o desafio de codificação - Password Generate](./public/preview.jpgpreview.jpg)
+![Visualização do design para o desafio de codificação - Password Generate](./public/preview.jpg)
 
 Esta é uma solução para o [desafio do aplicativo gerador de senhas no Frontend Mentor](https://www.frontendmentor.io/challenges/password-generator-app-Mr8CLycqjh). Os desafios do Frontend Mentor ajudam você a melhorar suas habilidades de codificação criando projetos realistas.
 
