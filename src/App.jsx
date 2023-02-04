@@ -23,7 +23,10 @@ export default App;
 const Container = styled.main`
   max-width: 540px;
   margin: auto;
-  padding: 32px 16px;
+  padding: 16px;
+  @media (max-width: 500px) {
+    padding: 32px 16px;
+  }
 `;
 
 const Title = styled.h1`

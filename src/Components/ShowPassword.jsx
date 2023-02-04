@@ -46,7 +46,6 @@ const Container = styled.div`
     transition: 0.4s ease-in-out;
   }
   @media (max-width: 500px) {
-    margin-bottom: 16px;
     padding: 16px;
   }
 `;
@@ -67,6 +66,7 @@ const Copied = styled.div`
   position: absolute;
   right: 10px;
   bottom: -35px;
+  z-index: 100;
   font-family: Arial, sans-serif;
   font-weight: 600;
   font-size: 18px;
@@ -93,6 +93,13 @@ const Copied = styled.div`
     to {
       opacity: 1;
       transform: translate3d(0, 0, 0);
+    }
+  }
+  @media (max-width: 500px) {
+    padding: 10px 20px;
+    font-size: 16px;
+    &::before {
+      right: 8px;
     }
   }
 `;
